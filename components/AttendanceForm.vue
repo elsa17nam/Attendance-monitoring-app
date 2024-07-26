@@ -1,10 +1,10 @@
 <template>
-    <section class="bg-gray-200 p-4 rounded-lg">
-      <h2 class="text-blue-500 text-2xl mb-4">Mark Attendance</h2>
+    <section class="bg-blue-100 p-16 rounded-lg ml-4 mt-4 justify-center">
+      <h2 class="text-black-300 text-xl mb-4 text-center">Mark Attendance</h2>
       <form @submit.prevent="submitForm">
         <div class="mb-4">
           <label for="name" class="block font-bold mb-2">Name:</label>
-          <input type="text" v-model="name" id="name" class="w-full p-2 border rounded" required />
+          <input type="text" v-model="name" id="name" class="w-full p-2 border rounded" required placeholder="Enter name" />
         </div>
         <div class="mb-4">
           <label for="status" class="block font-bold mb-2">Status:</label>

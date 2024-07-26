@@ -1,19 +1,21 @@
 <template>
-  <div class="container mx-auto p-4 bg-white rounded-lg shadow">
+  <div class="container mx-auto p-1 bg-blue-200 rounded-lg shadow">
+    <!-- <div class="container mx-auto p-1 bg-blue-200 rounded-lg shadow"> -->
+
     <Header />
     <main class="flex gap-4">
       <AttendanceForm @submit-attendance="addRecord" />
       <AttendanceList :records="records" />
     </main>
     <div class="mt-4">
-        <button @click="exportToExcel" class="bg-green-400 text-white py-2 px-4 rounded hover:bg-green-700 mb-4">
+        <button @click="exportToExcel" class="bg-green-400 text-white py-2 px-4 rounded hover:bg-green-700 mb-2 ml-4">
           Export to Excel
         </button>
-        <button @click="exportToPDF" class="bg-red-400 text-white py-2 px-4 rounded hover:bg-red-700 ml-2">
+        <button @click="exportToPDF" class="bg-red-400 text-white py-2 px-4 rounded hover:bg-red-700 ml-4 mt-1">
           Export to PDF
         </button>
       </div>
-    <footer class="bg-blue-500 text-white p-4 text-center rounded-b-lg">
+    <footer class="bg-blue-500 text-white p-2 text-center rounded-b-lg">
       
       <p>&copy; 2024 Attendance Monitoring Application</p>
       

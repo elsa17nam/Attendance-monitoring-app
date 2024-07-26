@@ -1,6 +1,6 @@
 <template>
-    <section class="bg-gray-200 p-4 rounded-lg">
-      <h2 class="text-blue-500 text-2xl mb-4">Attendance Record</h2>
+    <section class="bg-blue-100 p-16 rounded-lg ml-4 mt-4 mr-4">
+      <h2 class="text-black-200 text-xl mb-6 text-center justify-center ">Attendance Record</h2>
       <table class="w-full border-collapse">
         <thead>
           <tr class="bg-blue-500 text-white">
