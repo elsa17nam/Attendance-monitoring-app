@@ -1,12 +1,12 @@
 <template>
     <section class="bg-gray-200 p-4 rounded-lg">
-      <h2 class="text-blue-500 text-xl mb-4">Attendance Record</h2>
+      <h2 class="text-blue-500 text-2xl mb-4">Attendance Record</h2>
       <table class="w-full border-collapse">
         <thead>
           <tr class="bg-blue-500 text-white">
             <th class="p-2 text-left">Name</th>
-            <th class="p-2 text-left">Status</th>
-            <th class="p-2 text-left">Date</th>
+            <th class="p-2 text-right">Status</th>
+            <th class="ml-52 ">Date</th> 
           </tr>
         </thead>
         <tbody>
