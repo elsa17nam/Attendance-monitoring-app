@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto p-1 bg-blue-200 rounded-lg shadow">
+  <div class="container mx-auto p-1 bg-blue-400 rounded-lg shadow">
     <!-- <div class="container mx-auto p-1 bg-blue-200 rounded-lg shadow"> -->
 
     <Header />
@@ -8,10 +8,10 @@
       <AttendanceList :records="records" />
     </main>
     <div class="mt-4">
-        <button @click="exportToExcel" class="bg-green-400 text-white py-2 px-4 rounded hover:bg-green-700 mb-2 ml-4">
+        <button @click="exportToExcel" class="bg-green-400 text-white py-2 px-4 rounded hover:bg-green-700 mb-2 ml-20 ">
           Export to Excel
         </button>
-        <button @click="exportToPDF" class="bg-red-400 text-white py-2 px-4 rounded hover:bg-red-700 ml-4 mt-1">
+        <button @click="exportToPDF" class="bg-red-400 text-white py-2 px-4 rounded hover:bg-red-700 ml-5">
           Export to PDF
         </button>
       </div>
