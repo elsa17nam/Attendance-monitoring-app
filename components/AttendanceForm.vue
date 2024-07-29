@@ -15,6 +15,7 @@
             <option value="Absent">Absent</option>
           </select>
         </div>
+      
         <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">Submit</button>
       </form>
     </section>
@@ -30,10 +31,13 @@
     },
     methods: {
       submitForm() {
+        const now = new Date();
+
         this.$emit('submit-attendance', {
           name: this.name,
           status: this.status,
           date: new Date().toLocaleDateString(),
+          time: now.toLocaleTimeString(),
         });
         this.name = '';
         this.status = 'Present';

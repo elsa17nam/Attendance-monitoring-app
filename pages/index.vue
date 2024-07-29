@@ -65,11 +65,12 @@ function exportToPDF() {
   const columns = [
     { title: 'Name', dataKey: 'name' },
     { title: 'Status', dataKey: 'status' },
-    { title: 'Date', dataKey: 'date' }
+    { title: 'Date', dataKey: 'date' },
+    { title: 'Time', dataKey: 'time' }
   ];
   doc.autoTable({
     head: [columns.map(col => col.title)],
-    body: records.value.map(record => [record.name, record.status, record.date]),
+    body: records.value.map(record => [record.name, record.status, record.date, record.time]),
     startY: 22,
   });
   doc.save('attendance_records.pdf');
