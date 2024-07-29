@@ -1,5 +1,6 @@
+
+// AttendanceForm.vue
 <template>
-    <!-- <section class="bg-blue-100 p-16 rounded-lg ml-4 mt-4 justify-center"> -->
     <section class="bg-blue-400 p-16 rounded-lg w-2/5 ml-4 mt-4">
       <h2 class="text-white text-xl mb-4 text-center">Mark Attendance</h2>
       <form @submit.prevent="submitForm">
