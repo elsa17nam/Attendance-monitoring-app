@@ -1,16 +1,15 @@
-
 <template>
-  <div class="container mx-auto p-1 bg-blue-400 rounded-lg shadow">
+  <div class="min-h-screen bg-blue-400 rounded-lg shadow flex flex-col">
     <Header />
-    <main class="flex gap-4">
+    <main class="flex-1 flex gap-4 p-4">
       <AttendanceForm @submit-attendance="addRecord" />
       <AttendanceList :records="records" @edit-record="handleEditRecord" @delete-record="handleDeleteRecord" />
     </main>
-    <div class="mt-4">
-      <button @click="exportToExcel" class="bg-green-400 text-white py-2 px-4 rounded hover:bg-green-700 mb-2 ml-20">
+    <div class="mt-4 flex justify-center">
+      <button @click="exportToExcel" class="bg-green-400 text-white py-2 px-4 rounded hover:bg-green-700 mb-2">
         Export to Excel
       </button>
-      <button @click="exportToPDF" class="bg-red-400 text-white py-2 px-4 rounded hover:bg-red-700 ml-5">
+      <button @click="exportToPDF" class="bg-red-400 text-white py-2 px-4 rounded hover:bg-red-700 mb-2 ml-4">
         Export to PDF
       </button>
     </div>
@@ -22,15 +21,11 @@
 
 <script setup>
 import { useAttendance } from '~/composables/useAttendance';
-// import { useAttendanceStore } from '~/store/attendance';
-
 import * as XLSX from 'xlsx';
 import { jsPDF } from 'jspdf';
 import 'jspdf-autotable';
 
 const { records, addRecord, editRecord, deleteRecord } = useAttendance();
-// const attendanceStore = useAttendanceStore();
-// const { records, addRecord, editRecord, deleteRecord } = attendanceStore;
 
 function handleEditRecord(index) {
   const updatedRecord = promptForRecord(records.value[index]);
@@ -48,8 +43,8 @@ function handleDeleteRecord(index) {
 function promptForRecord(record) {
   const name = prompt('Enter name:', record.name);
   const status = prompt('Enter status:', record.status);
-  const date = new Date().toLocaleDateString();
-  return name && status ? { name, status, date } : null;
+  const { date, time } = record; //preserve date and time
+  return name && status ? { name, status, date, time } : null;
 }
 
 function exportToExcel() {
@@ -76,5 +71,17 @@ function exportToPDF() {
   doc.save('attendance_records.pdf');
 }
 </script>
+
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+</style>
+
+
+
+
 
 
